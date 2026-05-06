@@ -80,28 +80,38 @@ section[data-testid="stSidebar"] > div {
 }
 
 /* ── SIDEBAR NAV ── */
+/* ── SIDEBAR NAV ── */
 .stRadio [role="radiogroup"] {
   gap: 4px;
 }
 
-.stRadio label {
+/* Target the specific text element inside the radio button */
+.stRadio label p {
   font-family: 'Poppins', sans-serif !important;
   font-size: 12px !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   letter-spacing: 0.8px !important;
   text-transform: uppercase !important;
-  color: var(--muted) !important;
+  color: #8A9BBE !important; /* Muted light blue */
+  transition: all 0.2s ease !important;
+}
+
+/* Add background hover effect to the label container */
+.stRadio label {
   padding: 10px 16px !important;
   border-radius: 6px !important;
   border: 1px solid transparent !important;
-  transition: all 0.2s ease !important;
   cursor: pointer !important;
 }
 
 .stRadio label:hover {
   background: var(--glass) !important;
-  color: var(--white) !important;
   border-color: var(--border) !important;
+}
+
+/* Turn text bright white on hover */
+.stRadio label:hover p {
+  color: #FFFFFF !important;
 }
 
 /* ── PAGE HEADER ── */
