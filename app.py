@@ -690,8 +690,8 @@ elif selection == "3. Operational Diagnostics":
 
     tier_mapping = {'Mumbai': 'Tier-1', 'Pune': 'Tier-1', 'Nagpur': 'Tier-2', 'Indore': 'Tier-2'}
     hub['Tier'] = hub['city'].map(tier_mapping)
-    hub['Failed Attempt Rate'] = hub['failed_attempts'] / hub['total_orders']
-    hub['RTO Rate'] = hub['rto_count'] / hub['total_orders']
+    hub['Failed Attempt Rate'] = hub['failed_attempts'] / hub['total_orders'] * 100
+    hub['RTO Rate'] = hub['rto_count'] / hub['total_orders'] * 100
 
     hub_melted = hub.melt(id_vars=['city','Tier'], value_vars=['Failed Attempt Rate','RTO Rate'], var_name='Metric', value_name='Rate')
     colors_map = {'Failed Attempt Rate': '#E8003D', 'RTO Rate': '#F59E0B'}
